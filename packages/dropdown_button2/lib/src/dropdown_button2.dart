@@ -173,7 +173,7 @@ class DropdownButton2<T> extends StatefulWidget {
   /// If the [onChanged] callback is null or the list of items is null
   /// then the dropdown button will be disabled, i.e. its arrow will be
   /// displayed in grey and it will not respond to input.
-  final List<DropdownItem<T>>? items;
+  final List<DropdownItem<T>> items;
 
   /// A builder to customize the dropdown buttons corresponding to the
   /// [DropdownItem]s in [items].
