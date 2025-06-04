@@ -985,7 +985,7 @@ class DropdownButton2<T> extends StatefulWidget {
     this.barrierDismissible = true,
     this.barrierColor,
     this.barrierLabel,
-    this.durationDelayed = Duration(seconds: 0)
+    this.durationDelayed = const Duration(seconds: 0)
     // When adding new arguments, consider adding similar arguments to
     // DropdownButtonFormField.
   })  : assert(
@@ -1042,7 +1042,7 @@ class DropdownButton2<T> extends StatefulWidget {
     required InputDecoration inputDecoration,
     required bool isEmpty,
     required bool isFocused,
-    this.durationDelayed = Duration(seconds: 0),
+    this.durationDelayed = const Duration(seconds: 0),
   })  : assert(
           items == null ||
               items.isEmpty ||
