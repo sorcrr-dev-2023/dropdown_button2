@@ -1042,6 +1042,7 @@ class DropdownButton2<T> extends StatefulWidget {
     required InputDecoration inputDecoration,
     required bool isEmpty,
     required bool isFocused,
+    int durationDelayed = 0,
   })  : assert(
           items == null ||
               items.isEmpty ||
