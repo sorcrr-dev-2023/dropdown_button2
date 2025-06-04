@@ -1378,7 +1378,7 @@ class DropdownButton2State<T> extends State<DropdownButton2<T>> with WidgetsBind
   }
 
   void _handleTap() {
-    Future.delayed(Duration(seconds: widget.durationDelayed), () {
+    Future.delayed(Duration(seconds: widget.durationDelayed ?? 0), () {
       final List<_MenuItem<T>> menuItems = [
       for (int index = 0; index < widget.items!.length; index += 1)
         _MenuItem<T>(
