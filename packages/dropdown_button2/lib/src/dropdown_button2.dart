@@ -985,6 +985,7 @@ class DropdownButton2<T> extends StatefulWidget {
     this.barrierDismissible = true,
     this.barrierColor,
     this.barrierLabel,
+    this.durationDelayed = 0
     // When adding new arguments, consider adding similar arguments to
     // DropdownButtonFormField.
   })  : assert(
@@ -1237,6 +1238,8 @@ class DropdownButton2<T> extends StatefulWidget {
 
   final bool _isFocused;
 
+  final int durationDelayed;
+
   @override
   State<DropdownButton2<T>> createState() => DropdownButton2State<T>();
 }
@@ -1374,7 +1377,8 @@ class DropdownButton2State<T> extends State<DropdownButton2<T>> with WidgetsBind
   }
 
   void _handleTap() {
-    final List<_MenuItem<T>> menuItems = [
+    Future.delayed(Duration(seconds: widget.durationDelayed), () {
+      final List<_MenuItem<T>> menuItems = [
       for (int index = 0; index < widget.items!.length; index += 1)
         _MenuItem<T>(
           item: widget.items![index],
@@ -1433,6 +1437,7 @@ class DropdownButton2State<T> extends State<DropdownButton2<T>> with WidgetsBind
         return;
       }
       widget.onChanged?.call(newValue.result);
+    });
     });
 
     widget.onMenuStateChange?.call(true);
