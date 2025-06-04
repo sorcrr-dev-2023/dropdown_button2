@@ -985,7 +985,7 @@ class DropdownButton2<T> extends StatefulWidget {
     this.barrierDismissible = true,
     this.barrierColor,
     this.barrierLabel,
-    this.durationDelayed = 0
+    this.durationDelayed = Duration(seconds: 0)
     // When adding new arguments, consider adding similar arguments to
     // DropdownButtonFormField.
   })  : assert(
@@ -1042,7 +1042,7 @@ class DropdownButton2<T> extends StatefulWidget {
     required InputDecoration inputDecoration,
     required bool isEmpty,
     required bool isFocused,
-    this.durationDelayed = 0,
+    this.durationDelayed = Duration(seconds: 0),
   })  : assert(
           items == null ||
               items.isEmpty ||
@@ -1239,7 +1239,7 @@ class DropdownButton2<T> extends StatefulWidget {
 
   final bool _isFocused;
 
-  final int? durationDelayed;
+  final Duration? durationDelayed;
 
   @override
   State<DropdownButton2<T>> createState() => DropdownButton2State<T>();
@@ -1378,7 +1378,7 @@ class DropdownButton2State<T> extends State<DropdownButton2<T>> with WidgetsBind
   }
 
   void _handleTap() {
-    Future.delayed(Duration(seconds: widget.durationDelayed ?? 0), () {
+    Future.delayed(widget.durationDelayed ?? const Duration(seconds:  0), () {
       final List<_MenuItem<T>> menuItems = [
       for (int index = 0; index < widget.items!.length; index += 1)
         _MenuItem<T>(
