@@ -1042,7 +1042,7 @@ class DropdownButton2<T> extends StatefulWidget {
     required InputDecoration inputDecoration,
     required bool isEmpty,
     required bool isFocused,
-    int durationDelayed = 0,
+    this.durationDelayed = 0,
   })  : assert(
           items == null ||
               items.isEmpty ||
@@ -1239,7 +1239,7 @@ class DropdownButton2<T> extends StatefulWidget {
 
   final bool _isFocused;
 
-  final int durationDelayed;
+  final int? durationDelayed;
 
   @override
   State<DropdownButton2<T>> createState() => DropdownButton2State<T>();
